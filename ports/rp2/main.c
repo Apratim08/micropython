@@ -183,6 +183,8 @@ int main(int argc, char **argv) {
         mp_usbd_init();
         #endif
 
+        pyexec_frozen_module("_app.py", true);
+
         if (ret & PYEXEC_FORCED_EXIT) {
             goto soft_reset_exit;
         }
